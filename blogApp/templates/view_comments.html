@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Comments for Blog Post</h1>
+    <h2>Blog Post Title: {{ post_title }}</h2>
+
+    <ul class="list-group">
+        {% for comment in comments %}
+        <li class="list-group-item">
+            <p>{{ comment.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('comments.add_comment', post_id=post_id) }}" class="btn btn-primary mt-3">Add a Comment</a>
+</div>
+{% endblock %}

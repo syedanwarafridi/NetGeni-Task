@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Add a Comment</h1>
+    <h2>Blog Post Title: {{ post_title }}</h2>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="text">Comment:</label>
+            <textarea class="form-control" id="text" name="text" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+
+    <a href="{{ url_for('comments.view_comments', post_id=post_id) }}" class="btn btn-secondary mt-3">Back to Comments</a>
+</div>
+{% endblock %}
